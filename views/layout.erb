@@ -12,7 +12,21 @@
     <script src="/app.js"></script>
  </head>
   <body>
-    <header class="navbar navbar-expand navbar-light flex-column flex-md-row bd-navbar" style="background-color: #e3f2fd;">
+
+  <nav class="navbar sticky-top navbar-light" style="background-color: bisque">
+    <a class="navbar-brand" href="/">Pizza shop</a>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li class="nav-item" >
+        <form action="/cart" method="post">
+          <input type="text" hidden value="" name="order" id="order"/>
+          <input type="submit" class="btn btn-primary" value="Корзина:" id="cart" />
+        </form>
+      </li>
+    </ul>
+  </nav>
+
+ <!--   <nav class="navbar navbar-expand navbar-light flex-column flex-md-row bd-navbar" style="background-color: #e3f2fd;">
       <a class="navbar-brand" href="/">Pizza shop</a>
       <div class="navbar-nav-scroll">
         <ul class="navbar-nav bd-navbar-nav flex-row">
@@ -21,7 +35,11 @@
           <li class="nav-item" ><a  class="nav-link" href="/clients">Clients</a></li>
         </ul>
       </div>
-    </header>
+      <div class="nav navbar-nav navbar-right">
+        test
+      </div>
+    </nav>
+!-->
     <div class="container">
       <div>
         <%if @message && @message.length > 0 then %>
@@ -40,6 +58,10 @@
             str += "Ключ: " + localStorage.key(i) + "; Значение: " + localStorage.getItem(localStorage.key(i)) + ".<br>";
         }
         document.getElementById("elements").innerHTML = str;
+    </script>
+    <script>
+        set_text_cart();
+        set_value_order();
     </script>
   </body>
 </html>

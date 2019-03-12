@@ -1,0 +1,5 @@
+<% @hh.each do|key,value| %>
+  <% p = Product.find key %>
+  <%=p.title%> | <%=p.price%> | <%=value%> | <%=p.price * value%> |
+  <br>
+<% end %>
