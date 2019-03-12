@@ -5,13 +5,13 @@
 
 <div class="container">
   <div class="row">
-    <%Product.order('title').each do |product|%>
-    <div class="col-md">
+    <%Product.order('price').each do |product|%>
+    <div class="col-md-4">
       <img src="<%=product.path_to_image%>" />
       <h2><%=product.title%></h2>
       <p><%=product.description%></p>
       <div class="text-lg">Размер: <%=product.size%><%=' | Острая' if product.is_spisy%><%=' | Вегатарианская' if product.is_veg%><%=' | Лучшее предложение' if product.is_best_offer%> | Цена: <%=product.price%></div>
-      <button class="btn-outline-primary btn-lg">Добавить в карзину</button>
+      <button class="btn-outline-primary btn-lg" onclick="add_to_cart(<%=product.id%>)">Добавить в карзину</button>
     </div>
     <% end %>
   </div>
